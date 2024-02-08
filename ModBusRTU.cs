@@ -1,7 +1,7 @@
 using System;
 using System.IO.Ports;
 
-namespace SMD3100.util
+namespace util
 {
      class ModBusRTU: IDisposable
     {
