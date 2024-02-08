@@ -9,7 +9,7 @@ namespace util
      class FileUtil
     {
         /// <summary>
-        /// 폴더의 하위 항목을 List<string> 으로 반환하는 함수
+        /// 폴더의 하위 항목을 가져오는 함수
         /// </summary>
         /// <param name="directoryPath">타겟 디렉토리</param>
         /// <returns></returns>
@@ -31,31 +31,19 @@ namespace util
                         fileList.Add(directory);
                         fileList.AddRange(GetFileList(directory));
                     }
-                    catch (UnauthorizedAccessException)
-                    {
-                        // 디렉토리에 액세스할 권한이 없는 경우 무시
-                    }
-                    catch (DirectoryNotFoundException)
-                    {
-                        // 디렉토리를 찾을 수 없는 경우 무시
-                    }
+                    catch (UnauthorizedAccessException){ } // 디렉토리에 액세스할 권한이 없는 경우 무시
+                    catch (DirectoryNotFoundException) { } // 디렉토리를 찾을 수 없는 경우 무시
                 });
             }
-            catch (UnauthorizedAccessException)
-            {
-                // 디렉토리에 액세스할 권한이 없는 경우 무시
-            }
-            catch (DirectoryNotFoundException)
-            {
-                // 디렉토리를 찾을 수 없는 경우 무시
-            }
+            catch (UnauthorizedAccessException) { }// 디렉토리에 액세스할 권한이 없는 경우 무시
+            catch (DirectoryNotFoundException) { }// 디렉토리를 찾을 수 없는 경우 무시
             return fileList;
         }
 
         /// <summary>
         /// 맵 형태로 디렉토리 경로를 key값으로 파일 항목을 list 로 반환하는 함수
         /// </summary>
-        /// <param name="directoryPath">폴더 경로</param>
+        /// <param name="directoryPath"></param>
         /// <returns></returns>
         public static Dictionary<string, List<string>> GetFolderFilesMap(string directoryPath)
         {
@@ -85,24 +73,12 @@ namespace util
                             }
                         }
                     }
-                    catch (UnauthorizedAccessException)
-                    {
-                        // 디렉토리에 액세스할 권한이 없는 경우 무시
-                    }
-                    catch (DirectoryNotFoundException)
-                    {
-                        // 디렉토리를 찾을 수 없는 경우 무시
-                    }
+                    catch (UnauthorizedAccessException) { } // 디렉토리에 액세스할 권한이 없는 경우 무시
+                    catch (DirectoryNotFoundException) { }  // 디렉토리를 찾을 수 없는 경우 무시
                 });
             }
-            catch (UnauthorizedAccessException)
-            {
-                // 디렉토리에 액세스할 권한이 없는 경우 무시
-            }
-            catch (DirectoryNotFoundException)
-            {
-                // 디렉토리를 찾을 수 없는 경우 무시
-            }
+            catch (UnauthorizedAccessException) { }// 디렉토리에 액세스할 권한이 없는 경우 무시
+            catch (DirectoryNotFoundException) { }// 디렉토리를 찾을 수 없는 경우 무시
             return folderFilesMap;
         }
 
