@@ -79,7 +79,7 @@ namespace SMD3100.util
             {
                 // todo: 시리얼 통신 오류 처리 (연결 끊김 등)
                 Console.WriteLine("Serial port error occurred: " + e.EventType.ToString());
-                // ttodo: 여기에 연결 끊김에 대한 추가 처리 로직 작성
+                // todo: 여기에 연결 끊김에 대한 추가 처리 로직 작성
             }
         }
 
