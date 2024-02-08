@@ -43,5 +43,23 @@ namesapce util
       {
           return GetRSAProviderFromPem(File.ReadAllText(pemfile).Trim());
       }
+
+       //ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
+       //X509Certificate2 cert = new X509Certificate2("crt file path");
+       //RSACryptoServiceProvider rsa = PemReader.GetRSAProviderFromPemFile("key file path");
+      
+       //cert = cert.CopyWithPrivateKey(rsa);
+       //byte[] byteArray = Encoding.UTF8.GetBytes(xml);
+      
+       //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+       //request.ClientCertificates.Add(cert);
+       //request.Method = "POST";
+       //request.ContentLength = byteArray.Length;
+       //request.Timeout = System.Threading.Timeout.Infinite;
+      
+       //using (Stream stream = request.GetRequestStream())
+       //{
+       //    stream.Write(byteArray, 0, byteArray.Length);
+       //}
   }
 }
